@@ -1,0 +1,28 @@
+{
+  "name": "Pdf bookmarks",
+  "manifest_version": 3,
+  "version": "1.0",
+  "description": "Create and manage pdf bookmarks in the browser",
+  "permissions": [
+    "action",
+    "activeTab",
+    "storage"
+  ],
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": ["http://*/*.pdf*", "https://*/*.pdf*", "file://*/*.pdf*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

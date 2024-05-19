@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="pdf-bookmarks-panel" />
+  <meta name="author" content="Vitor Oliveira" />
+  <title>Pdf Bookmarks</title>
+</head>
+
+<body>
+  <style>
+    main {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      width: 450px;
+      height: 450px;
+    }
+
+    .current-pdf {
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .bookmark-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      vertical-align: middle;
+    }
+
+    .bookmarks-section-title {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .bookmark-item {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      vertical-align: middle;
+      margin-bottom: 15%;
+    }
+
+    .bookmark-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .bookmark-item-label {
+      font-size: 1.2rem;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .delete-button-image {
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      filter: invert(26%) sepia(99%) saturate(6212%) hue-rotate(357deg) brightness(107%) contrast(123%);
+      /*https://isotropic.co/tool/hex-color-to-css-filter/*/
+    }
+
+    .bookmark-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .add-bookmark-input-label {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 5%;
+    }
+
+    .add-bookmark-btn {
+      padding: 10px;
+      margin-top: 5%;
+      border-radius: 5px;
+      background-color: lightgreen;
+      cursor: pointer;
+    }
+
+    .wrong-message {
+      font-size: 1.2rem;
+      color: red;
+      text-decoration: underline;
+    }
+  </style>
+  <main>
+    <h1 class="current-pdf" id="open-pdf"></h1>
+    <div class="bookmark-form">
+      <label for="add-bookmark-input" class="add-bookmark-input-label">Add a new bookmark</label>
+      <input type="text" id="add-bookmark-input" placeholder="page" pattern="[0-9]+" />
+      <span class="wrong-message" id="wrong-message"></span>
+      <button class="add-bookmark-btn" id="add-bookmark-btn" type="button">Add bookmark</button>
+    </div>
+    <div>
+      <h3 class="bookmarks-section-title">Bookmarks</h3>
+      <div class="bookmark-list" id="bookmark-list">
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/popup.js"></script>
+</body>
+
+</html>
