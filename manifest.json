@@ -4,7 +4,6 @@
   "version": "1.0",
   "description": "Create and manage pdf bookmarks in the browser",
   "permissions": [
-    "action",
     "activeTab",
     "storage"
   ],
